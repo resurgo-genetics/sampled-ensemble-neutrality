@@ -2,7 +2,8 @@
   :description "Sampled ensemble neutrality"
 
   :jvm-opts ["-Xmx2g"]
-  :main invfold
+  :main sen.robustness.neutrality
+  :aot [sen.robustness.neutrality]
 
   :java-source-paths ["src-java/"]
 

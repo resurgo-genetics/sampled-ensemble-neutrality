@@ -225,7 +225,7 @@
              :let [cur (doall
                         (map (fn [insto]
                                (-> insto
-                                    (generic-robustness-sto (opts :nseqs)
+                                   (generic-robustness-sto (opts :nseqs)
                                                             :invfile-ext (opts :invfile-ext)
                                                             :distfn (opts :distfn))
                                     subopt-robustness-summary)

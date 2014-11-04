@@ -15,7 +15,8 @@
                          valid-seq-sto? parse-dotps)]
         sen.robustness.utils
         sen.robustness.distance-metrics
-        ))
+        )
+  (:gen-class))
 
 
 
@@ -150,7 +151,7 @@
                             ["-dfn" "--distfn" "distance function"
                              :parse-fn #(->> % symbol
                                              (ns-resolve 'sen.robustness.neutrality))
-                             :default subopt-overlap-neighbors]
+                             :default subopt-seq]
                             ["-nc" "--ncore" "number cores to use"
                              :parse-fn #(Integer/parseInt %)
                              :default 6]
@@ -176,6 +177,8 @@
                                     (prn (vec neutrality))) ;data to file
      :else
      (doall neutrality))))
+
+(defn -main [& args] (apply main-subopt-overlap args))
 
 (defn- write-remu-file
   "One-off function for converting a sto into a remuRNA style fast for

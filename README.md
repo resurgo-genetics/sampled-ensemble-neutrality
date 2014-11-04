@@ -1,25 +1,38 @@
-# gaisr: Genomic Analysis Illuminating Structured RNA
+# Sampled ensemble neutrality (SEN)
 #
 
-A pipeline incorporating several de novo RNA discovery tools for
-finding, filtering and scoring ncRNA in operon and genome wide
-prokaryotes.  Additionally supports manual curation by several
-graphical presentations of 'hits' in various user defined genomic
-contexts
+Given a multiple sequence alignment with secondary structure, SEN
+calculates the neutrality of the sequences in the alignment and
+reports the average. Additionally, SEN can be used to test for
+mutational robustness by calculating sequence neutrality and the mean
+neutrality of 100 inverse folded sequences, which fold into a similar
+structure.
 
-## Usage
+## Usage SEN is written in Clojure 1.5 and requires Java 7+ It is
+highly recommended that the user gets Leiningen [here]
+(https://github.com/technomancy/leiningen) to run SEN from the command
+line.
 
-Currently there are both cmdline and web based interactions to
-different entry points and useage.  This needs significant expansion
-and consolidation and regularization.
+To calculate the neutrality of sequences in a file
+(main-subopt-overlap -f <full-name-of-file>)
 
-Documentation on use not currently available - FIX THIS!!
+Additional help and options
+(main-subopt-overlap --help)
+
+If you use the jar file:
+java -jar sen-1.0.0-SNAPSHOT-standalone.jar -f "full-name-of-file" --outfile "full-name-of-output"
+
+note the arguments are in double quotes
+
+
+#TODO
+Documentation on API not available yet
 
 
 ## License
 
 ;; ------------------------------------------------------------------------ ;;
-;; Copyright (c) 2011 Trustees of Boston College                            ;;
+;; Copyright (c) 2014 Trustees of Boston College                            ;;
 ;;                                                                          ;;
 ;; Permission is hereby granted, free of charge, to any person obtaining    ;;
 ;; a copy of this software and associated documentation files (the          ;;
